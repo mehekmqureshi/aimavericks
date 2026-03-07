@@ -1,0 +1,15 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {
+          "text": "Say hello"
+        }
+      ]
+    }
+  ],
+  "inferenceConfig": {
+    "max_new_tokens": 100
+  }
+}

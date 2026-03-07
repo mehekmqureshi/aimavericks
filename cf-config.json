@@ -1,0 +1,41 @@
+﻿{
+    "CallerReference":  "639080762689345963",
+    "DefaultRootObject":  "index.html",
+    "Origins":  {
+                    "Quantity":  1,
+                    "Items":  [
+                                  {
+                                      "S3OriginConfig":  {
+                                                             "OriginAccessIdentity":  ""
+                                                         },
+                                      "Id":  "S3Origin",
+                                      "DomainName":  "gp-frontend-aimavericks-2026.s3.amazonaws.com"
+                                  }
+                              ]
+                },
+    "CacheBehaviors":  {
+                           "Quantity":  0,
+                           "Items":  [
+
+                                     ]
+                       },
+    "DefaultCacheBehavior":  {
+                                 "TargetOriginId":  "S3Origin",
+                                 "MaxTTL":  31536000,
+                                 "MinTTL":  0,
+                                 "ViewerProtocolPolicy":  "redirect-to-https",
+                                 "TrustedSigners":  {
+                                                        "Quantity":  0,
+                                                        "Enabled":  false
+                                                    },
+                                 "DefaultTTL":  86400,
+                                 "ForwardedValues":  {
+                                                         "Cookies":  {
+                                                                         "Forward":  "none"
+                                                                     },
+                                                         "QueryString":  false
+                                                     }
+                             },
+    "Enabled":  true,
+    "Comment":  "Green Passport Frontend Distribution"
+}

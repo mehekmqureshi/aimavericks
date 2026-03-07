@@ -1,0 +1,166 @@
+/**
+ * SaveDraft Lambda Handler
+ * 
+ * Saves partial lifecycle data as a draft for later completion.
+ * Allows manufacturers to save progress on product creation.
+ * 
+ * Requirements: 3.1.6
+ */
+
+import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
+import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
+import { DynamoDBDocumentClient, PutCommand } from '@aws-sdk/lib-dynamodb';
+import { randomUUID } from 'crypto';
+import {
+  SaveDraftRequest,
+  SaveDraftResponse,
+  ErrorResponse,
+} from '../../shared/types';
+
+// Initialize DynamoDB client
+const dynamoClient = new DynamoDBClient({ region: process.env.AWS_REGION || 'us-east-1' });
+const docClient = DynamoDBDocumentClient.from(dynamoClient);
+
+const DRAFTS_TABLE = process.env.DRAFTS_TABLE || 'Drafts';
+
+/**
+ * Lambda handler for saving a draft
+ * 
+ * Flow:
+ * 1. Parse request body with partial lifecycle data
+ * 2. Extract manufacturerId from JWT token
+ * 3. Store draft data in DynamoDB with draftId
+ * 4. Return draftId and timestamp
+ * 
+ * @param event - API Gateway event with draft data
+ * @returns API Gateway response with draftId and timestamp
+ */
+export const handler = async (
+  event: APIGatewayProxyEvent
+): Promise<APIGatewayProxyResult> => {
+  const requestId = event.requestContext.requestId;
+  
+  try {
+    // Step 1: Parse request body
+    if (!event.body) {
+      return createErrorResponse(400, 'MISSING_BODY', 'Request body is required', requestId);
+    }
+
+    let requestBody: SaveDraftRequest;
+    try {
+      requestBody = JSON.parse(event.body);
+    } catch (error) {
+      return createErrorResponse(400, 'INVALID_JSON', 'Request body must be valid JSON', requestId);
+    }
+
+    // Validate that at least some data is provided
+    if (!requestBody.name && !requestBody.description && !requestBody.category && !requestBody.lifecycleData) {
+      return createErrorResponse(400, 'VALIDATION_ERROR', 'At least one field must be provided to save a draft', requestId);
+    }
+
+    // Step 2: Extract manufacturerId from JWT token
+    const manufacturerId = extractManufacturerId(event);
+    if (!manufacturerId) {
+      return createErrorResponse(401, 'UNAUTHORIZED', 'Invalid or missing authentication token', requestId);
+    }
+
+    // Step 3: Store draft data in DynamoDB
+    const draftId = `DRAFT-${randomUUID()}`;
+    const now = new Date().toISOString();
+
+    const draftItem = {
+      draftId,
+      manufacturerId,
+      name: requestBody.name,
+      description: requestBody.description,
+      category: requestBody.category,
+      lifecycleData: requestBody.lifecycleData,
+      savedAt: now,
+      updatedAt: now,
+    };
+
+    await docClient.send(new PutCommand({
+      TableName: DRAFTS_TABLE,
+      Item: draftItem,
+    }));
+
+    // Step 4: Return draftId and timestamp
+    const response: SaveDraftResponse = {
+      draftId,
+      savedAt: now,
+    };
+
+    return {
+      statusCode: 201,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
+      body: JSON.stringify(response),
+    };
+
+  } catch (error) {
+    console.error('Error saving draft:', error);
+    
+    return createErrorResponse(
+      500,
+      'INTERNAL_ERROR',
+      'An error occurred while saving the draft',
+      requestId,
+      error instanceof Error ? error.message : 'Unknown error'
+    );
+  }
+};
+
+/**
+ * Extract manufacturerId from JWT token in Authorization header
+ * 
+ * In API Gateway with JWT authorizer, the claims are available in:
+ * event.requestContext.authorizer.claims
+ */
+function extractManufacturerId(event: APIGatewayProxyEvent): string | null {
+  try {
+    // JWT authorizer puts claims in requestContext.authorizer
+    const claims = event.requestContext.authorizer?.claims;
+    
+    // Use sub claim (Cognito user ID) as manufacturerId
+    if (claims && claims.sub) {
+      return claims.sub;
+    }
+
+    return null;
+  } catch (error) {
+    console.error('Error extracting manufacturerId:', error);
+    return null;
+  }
+}
+
+/**
+ * Create standardized error response
+ */
+function createErrorResponse(
+  statusCode: number,
+  code: string,
+  message: string,
+  requestId: string,
+  details?: any
+): APIGatewayProxyResult {
+  const errorResponse: ErrorResponse = {
+    error: {
+      code,
+      message,
+      details,
+      timestamp: new Date().toISOString(),
+      requestId,
+    },
+  };
+
+  return {
+    statusCode,
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    },
+    body: JSON.stringify(errorResponse),
+  };
+}

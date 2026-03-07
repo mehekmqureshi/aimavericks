@@ -1,0 +1,114 @@
+/**
+ * ProgressIndicator Styles
+ * Horizontal step indicator with blue theme
+ */
+
+.progress-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.progress-step-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+  z-index: 2;
+}
+
+.progress-step.active .step-number {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transform: scale(1.1);
+}
+
+.progress-step.completed .step-number {
+  background: #10b981;
+  color: white;
+}
+
+.step-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+  text-align: center;
+  max-width: 100px;
+  line-height: 1.3;
+}
+
+.progress-step.active .step-label {
+  color: #1e3c72;
+  font-weight: 600;
+}
+
+.progress-step.completed .step-label {
+  color: #10b981;
+}
+
+.progress-line {
+  flex: 1;
+  height: 2px;
+  background: #e5e7eb;
+  margin: 0 8px;
+  position: relative;
+  top: -20px;
+}
+
+.progress-line.completed {
+  background: #10b981;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .progress-indicator {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 16px;
+  }
+
+  .progress-step-wrapper {
+    flex: 0 0 auto;
+    min-width: 100px;
+  }
+
+  .step-number {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .step-label {
+    font-size: 10px;
+    max-width: 80px;
+  }
+
+  .progress-line {
+    min-width: 20px;
+  }
+}

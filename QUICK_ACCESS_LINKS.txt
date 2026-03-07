@@ -1,0 +1,90 @@
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║     🎯 GREEN PASSPORT PLATFORM - QUICK ACCESS GUIDE 🎯         ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+
+🌐 BASE APPLICATION URL:
+
+   http://gp-frontend-prod-2026.s3-website-us-east-1.amazonaws.com
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📍 DIRECT ACCESS LINKS:
+
+   🏠 Consumer Landing Page:
+      http://gp-frontend-prod-2026.s3-website-us-east-1.amazonaws.com/
+
+   🔐 Manufacturer Login:
+      http://gp-frontend-prod-2026.s3-website-us-east-1.amazonaws.com/login
+
+   📊 Manufacturer Dashboard:
+      http://gp-frontend-prod-2026.s3-website-us-east-1.amazonaws.com/dashboard
+
+   ➕ Create New Product:
+      http://gp-frontend-prod-2026.s3-website-us-east-1.amazonaws.com/create-dpp
+
+   📦 View All Products:
+      http://gp-frontend-prod-2026.s3-website-us-east-1.amazonaws.com/products
+
+   🔲 QR Code Management:
+      http://gp-frontend-prod-2026.s3-website-us-east-1.amazonaws.com/qr-management
+
+   ⚙️  Settings:
+      http://gp-frontend-prod-2026.s3-website-us-east-1.amazonaws.com/settings
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔑 LOGIN CREDENTIALS:
+
+   Email:    manufacturer@greenpassport.com
+   Password: Test123!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 HOW TO ACCESS MANUFACTURER DASHBOARD:
+
+   1. Open Login Page:
+      http://gp-frontend-prod-2026.s3-website-us-east-1.amazonaws.com/login
+
+   2. Enter Credentials:
+      Email:    manufacturer@greenpassport.com
+      Password: Test123!
+
+   3. Click "Sign In"
+
+   4. You'll be redirected to Dashboard:
+      http://gp-frontend-prod-2026.s3-website-us-east-1.amazonaws.com/dashboard
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📱 DASHBOARD FEATURES:
+
+   ✅ Dashboard - View statistics and activity
+   ✅ Create DPP - Create new digital product passports
+   ✅ Products - View and manage all products
+   ✅ QR Management - Generate and download QR codes
+   ✅ Settings - Update manufacturer profile
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ SYSTEM STATUS:
+
+   Frontend:     🟢 LIVE (AWS S3)
+   API:          🟢 OPERATIONAL (API Gateway)
+   Database:     🟢 ACTIVE (DynamoDB)
+   Auth:         🟢 READY (Cognito)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔗 API ENDPOINT:
+
+   https://325xzv9pli.execute-api.us-east-1.amazonaws.com/prod
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Status: ✅ LIVE AND OPERATIONAL
+Date: March 3, 2026
+Ready for: Production Use, Testing, Demo
+
+Your application is ready to use! 🚀

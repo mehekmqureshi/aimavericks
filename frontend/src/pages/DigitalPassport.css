@@ -1,0 +1,818 @@
+/**
+ * Digital Product Passport Styles
+ * Matching the GreenWeave design reference
+ */
+
+.digital-passport {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e5a7d 0%, #2c7da0 50%, #4a9aba 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  padding: 20px;
+}
+
+/* Loading & Error States */
+.loading-state,
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  color: white;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.error-state h2 {
+  color: white;
+  margin: 10px 0;
+}
+
+.error-state p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+}
+
+.btn-back {
+  background: white;
+  color: #2c7da0;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
+.passport-header {
+  background: linear-gradient(90deg, #1e5a7d 0%, #2c7da0 100%);
+  padding: 20px 30px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  gap: 20px;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  font-size: 32px;
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+
+.header-title {
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.header-qr {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.qr-code-display {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.qr-image {
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.qr-scan-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #333;
+}
+
+.scan-icon {
+  font-size: 14px;
+}
+
+/* Main Container */
+.passport-section {
+  background: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* Product Details Section */
+.product-details {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 30px;
+  align-items: start;
+  border-bottom: 3px solid #e0e0e0;
+}
+
+.product-image-container {
+  background: #f5f5f5;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image-placeholder {
+  font-size: 80px;
+  color: #ccc;
+}
+
+.product-info {
+  padding: 10px 0;
+}
+
+.section-title {
+  color: #1e5a7d;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+}
+
+.detail-row {
+  margin-bottom: 10px;
+}
+
+.detail-label {
+  background: #e8f4f8;
+  color: #1e5a7d;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.product-name {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e5a7d;
+  margin: 15px 0;
+}
+
+.product-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.meta-icon {
+  font-size: 18px;
+}
+
+.sustainability-badge-display {
+  margin-top: 15px;
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+}
+
+.badge-green {
+  background: linear-gradient(135deg, #4a7c59 0%, #7fb069 100%);
+}
+
+.badge-yellow {
+  background: linear-gradient(135deg, #f4a261 0%, #e9c46a 100%);
+}
+
+.badge-red {
+  background: linear-gradient(135deg, #e76f51 0%, #d62828 100%);
+}
+
+/* Sustainability Information */
+.sustainability-info {
+  border-bottom: 3px solid #e0e0e0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #1e5a7d;
+  color: white;
+  padding: 15px 20px;
+  margin: -30px -30px 30px -30px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.header-icon {
+  font-size: 24px;
+}
+
+.sustainability-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.info-card {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e5a7d;
+  margin: 0 0 20px 0;
+}
+
+.title-icon {
+  font-size: 20px;
+}
+
+/* Carbon Breakdown */
+.breakdown-bars {
+  margin-bottom: 20px;
+}
+
+.breakdown-item {
+  margin-bottom: 15px;
+}
+
+.breakdown-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.breakdown-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 32px;
+  position: relative;
+}
+
+.breakdown-bar {
+  height: 100%;
+  transition: width 0.5s ease;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.bar-materials {
+  background: linear-gradient(90deg, #7fb069 0%, #a8d5ba 100%);
+}
+
+.bar-manufacturing {
+  background: linear-gradient(90deg, #4a9aba 0%, #6bb6d6 100%);
+}
+
+.bar-transport {
+  background: linear-gradient(90deg, #9ca3af 0%, #cbd5e1 100%);
+}
+
+.breakdown-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+.total-carbon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: white;
+  border: 2px solid #1e5a7d;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.total-label {
+  color: #1e5a7d;
+  font-size: 16px;
+}
+
+.total-value {
+  color: #1e5a7d;
+  font-size: 18px;
+}
+
+/* Material Composition */
+.material-chart {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pie-chart {
+  width: 200px;
+  height: 200px;
+}
+
+.pie-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.material-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.legend-text {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.location-map {
+  width: 80px;
+  height: 60px;
+  background: #e8f4f8;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.location-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.location-name,
+.location-code {
+  font-size: 13px;
+  color: #555;
+  font-weight: 600;
+}
+
+/* Details Grid */
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  border-bottom: 3px solid #e0e0e0;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1e5a7d;
+  color: white;
+  padding: 12px 15px;
+  margin: -20px -20px 20px -20px;
+  border-radius: 12px 12px 0 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.manufacturer-info {
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-icon {
+  font-size: 20px;
+  color: #1e5a7d;
+}
+
+.info-content strong {
+  display: block;
+  color: #1e5a7d;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.info-content p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+
+.cert-list li {
+  padding: 4px 0;
+  color: #555;
+  font-size: 13px;
+}
+
+.cert-list li:before {
+  content: "• ";
+  color: #4a7c59;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.manufacturer-map {
+  background: #e8f4f8;
+  border-radius: 8px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-placeholder {
+  font-size: 48px;
+}
+
+/* End-of-Life Guidance */
+.guidance-section {
+  margin-bottom: 20px;
+}
+
+.guidance-section:last-child {
+  margin-bottom: 0;
+}
+
+.guidance-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e5a7d;
+  margin: 0 0 12px 0;
+}
+
+.guidance-icon {
+  font-size: 18px;
+}
+
+.guidance-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.guidance-list li {
+  padding: 8px 0;
+  padding-left: 24px;
+  color: #555;
+  font-size: 14px;
+  position: relative;
+}
+
+.guidance-list li:before {
+  content: "• ";
+  position: absolute;
+  left: 8px;
+  color: #4a7c59;
+  font-weight: bold;
+}
+
+.reuse-options .guidance-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 0;
+}
+
+.reuse-options .guidance-list li:before {
+  display: none;
+}
+
+.option-icon {
+  font-size: 16px;
+  color: #4a7c59;
+}
+
+/* Verification Status */
+.verification-status {
+  border-bottom: none;
+}
+
+.verification-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 30px;
+  align-items: start;
+}
+
+.verification-badge {
+  text-align: center;
+}
+
+.badge-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  border: 4px solid;
+}
+
+.badge-circle.verified {
+  background: #4a7c59;
+  border-color: #7fb069;
+}
+
+.badge-circle.unverified {
+  background: #e76f51;
+  border-color: #f4a261;
+}
+
+.badge-icon {
+  font-size: 48px;
+  color: white;
+  font-weight: bold;
+}
+
+.badge-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e5a7d;
+  margin-bottom: 8px;
+}
+
+.verification-stars {
+  color: #f4a261;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.verification-checklist {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.checklist-item:last-child {
+  border-bottom: none;
+}
+
+.check-icon {
+  width: 24px;
+  height: 24px;
+  background: #4a7c59;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.check-text {
+  font-size: 14px;
+  color: #555;
+}
+
+.verification-compliance {
+  background: #e8f4f8;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.compliance-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #d0e8f0;
+}
+
+.compliance-item:last-child {
+  border-bottom: none;
+}
+
+.compliance-icon {
+  font-size: 20px;
+  color: #1e5a7d;
+}
+
+.compliance-text {
+  font-size: 14px;
+  color: #1e5a7d;
+  font-weight: 600;
+}
+
+/* Footer */
+.passport-footer {
+  background: #1e5a7d;
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+  border-radius: 0 0 12px 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-support {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.footer-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .passport-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .header-brand {
+    justify-content: center;
+  }
+
+  .header-qr {
+    justify-content: center;
+  }
+
+  .sustainability-grid,
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .verification-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .digital-passport {
+    padding: 10px;
+  }
+
+  .passport-section {
+    padding: 20px;
+  }
+
+  .product-details {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .product-image-container {
+    margin: 0 auto;
+    max-width: 200px;
+  }
+
+  .header-title {
+    font-size: 20px;
+  }
+
+  .product-name {
+    font-size: 24px;
+  }
+
+  .material-chart {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,225 @@
+/**
+ * MaterialChart Component Styles
+ * Green color theme for eco-friendly visualization
+ */
+
+.material-chart {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.chart-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.chart-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #228b22;
+  margin: 0 0 0.5rem 0;
+}
+
+.chart-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+.chart-container {
+  margin: 1.5rem 0;
+}
+
+/* Custom Tooltip */
+.material-tooltip {
+  background: white;
+  border: 2px solid #228b22;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #228b22;
+  margin: 0 0 0.5rem 0;
+}
+
+.tooltip-value {
+  font-size: 1rem;
+  color: #333;
+  margin: 0 0 0.25rem 0;
+}
+
+.tooltip-value strong {
+  color: #228b22;
+}
+
+.tooltip-weight {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0 0 0.25rem 0;
+}
+
+.tooltip-type {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Material Details Table */
+.material-details {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.material-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.material-table thead {
+  background: #f0f9f4;
+}
+
+.material-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #228b22;
+  border-bottom: 2px solid #228b22;
+}
+
+.material-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.material-table tbody tr:hover {
+  background: #f9f9f9;
+}
+
+.material-table td {
+  padding: 0.75rem 1rem;
+  color: #555;
+}
+
+.material-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.material-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.percentage-cell,
+.weight-cell {
+  font-weight: 600;
+  color: #228b22;
+}
+
+.type-cell {
+  text-align: center;
+}
+
+.type-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.type-badge.recycled {
+  background: #e8f5e9;
+  color: #228b22;
+}
+
+.type-badge.virgin {
+  background: #fff3e0;
+  color: #ff8f00;
+}
+
+/* Material Summary */
+.material-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: #f0f9f4;
+  border-radius: 8px;
+}
+
+.summary-label {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.summary-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #228b22;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .material-chart {
+    padding: 1rem;
+  }
+
+  .chart-title {
+    font-size: 1.25rem;
+  }
+
+  .chart-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .chart-container {
+    margin: 1rem 0;
+  }
+
+  .material-table {
+    font-size: 0.875rem;
+  }
+
+  .material-table th,
+  .material-table td {
+    padding: 0.5rem;
+  }
+
+  .material-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Recharts overrides for green theme */
+.recharts-legend-item-text {
+  color: #555 !important;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.recharts-pie-label-text {
+  font-weight: 600;
+}

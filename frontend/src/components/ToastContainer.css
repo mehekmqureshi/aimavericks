@@ -1,0 +1,28 @@
+/**
+ * ToastContainer Styles
+ */
+
+.toast-container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.toast-container > div {
+  pointer-events: all;
+  animation: slideIn 0.3s ease-out;
+  animation-delay: calc(var(--index) * 0.1s);
+}
+
+@media (max-width: 768px) {
+  .toast-container {
+    top: 16px;
+    right: 16px;
+    left: 16px;
+  }
+}

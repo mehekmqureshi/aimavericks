@@ -1,0 +1,11 @@
+{
+  "body": "{\"productName\":\"Organic Cotton T-Shirt\",\"category\":\"Apparel\"}",
+  "requestContext": {
+    "requestId": "test-request-123",
+    "authorizer": {
+      "claims": {
+        "sub": "test-manufacturer-id"
+      }
+    }
+  }
+}

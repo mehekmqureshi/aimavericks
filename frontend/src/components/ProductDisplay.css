@@ -1,0 +1,372 @@
+/**
+ * ProductDisplay Component Styles
+ * White and green eco-friendly theme with clear visual hierarchy
+ */
+
+.product-display {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f9f4 0%, #ffffff 100%);
+  padding: 2rem 1rem;
+}
+
+.product-display-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(34, 139, 34, 0.1);
+  overflow: hidden;
+}
+
+/* Header Section */
+.product-header {
+  background: linear-gradient(135deg, #228b22 0%, #32cd32 100%);
+  color: white;
+  padding: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.product-header-content {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.product-category {
+  font-size: 1.125rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Sustainability Badge */
+.sustainability-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+}
+
+.badge-icon {
+  font-size: 2rem;
+}
+
+.badge-content {
+  flex: 1;
+}
+
+.badge-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.badge-threshold {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.badge-green .badge-name {
+  color: #228b22;
+}
+
+.badge-yellow .badge-name {
+  color: #ffa500;
+}
+
+.badge-red .badge-name {
+  color: #dc3545;
+}
+
+.badge-gray .badge-name {
+  color: #666;
+}
+
+/* Verification Status */
+.verification-status {
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid #eee;
+}
+
+.verification-status.verified {
+  background: #f0f9f4;
+  color: #228b22;
+}
+
+.verification-status.failed {
+  background: #fee;
+  color: #dc3545;
+}
+
+.verification-icon {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.verification-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.verification-detail {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  margin-left: auto;
+}
+
+/* Product Sections */
+.product-section {
+  padding: 2rem 2.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.product-section:last-of-type {
+  border-bottom: none;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #228b22;
+  margin: 0 0 1.5rem 0;
+}
+
+.product-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+/* Carbon Section */
+.carbon-section {
+  background: #f9f9f9;
+}
+
+.carbon-display {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.carbon-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  min-width: 180px;
+}
+
+.carbon-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #228b22;
+  line-height: 1;
+}
+
+.carbon-unit {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.carbon-breakdown {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 3px solid #228b22;
+}
+
+.breakdown-label {
+  font-weight: 600;
+  color: #555;
+}
+
+.breakdown-value {
+  color: #228b22;
+  font-weight: 600;
+}
+
+/* Sustainability Score */
+.score-display {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.score-value {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #228b22;
+  min-width: 150px;
+}
+
+.score-bar {
+  flex: 1;
+  height: 40px;
+  background: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.score-fill {
+  height: 100%;
+  border-radius: 20px;
+  transition: width 0.5s ease, background 0.3s ease;
+}
+
+/* Manufacturer Section */
+.manufacturer-section {
+  background: #f9f9f9;
+}
+
+.manufacturer-info,
+.serial-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #555;
+  min-width: 140px;
+}
+
+.info-value {
+  color: #333;
+  flex: 1;
+}
+
+.serial-id {
+  font-family: 'Courier New', monospace;
+  background: #f0f9f4;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: #228b22;
+  font-weight: 600;
+}
+
+.certifications {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.certification-badge {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  background: #228b22;
+  color: white;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Footer */
+.product-footer {
+  padding: 2rem 2.5rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 0.9375rem;
+  color: #666;
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.footer-date {
+  font-size: 0.875rem;
+  color: #999;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-display {
+    padding: 1rem;
+  }
+
+  .product-header {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .product-name {
+    font-size: 1.75rem;
+  }
+
+  .sustainability-badge {
+    width: 100%;
+  }
+
+  .product-section {
+    padding: 1.5rem;
+  }
+
+  .carbon-display {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .carbon-value {
+    width: 100%;
+  }
+
+  .carbon-breakdown {
+    grid-template-columns: 1fr;
+  }
+
+  .score-display {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .score-value {
+    text-align: center;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .info-label {
+    min-width: auto;
+  }
+}

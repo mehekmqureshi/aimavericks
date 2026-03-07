@@ -1,0 +1,8 @@
+{
+  "name": "createProduct",
+  "memory": 512,
+  "timeout": 30,
+  "description": "Create product with lifecycle data and carbon footprint calculation",
+  "handler": "index.handler",
+  "runtime": "nodejs20.x"
+}

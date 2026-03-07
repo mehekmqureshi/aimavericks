@@ -1,0 +1,11 @@
+{
+  "body": "{\"name\":\"Test Product\",\"category\":\"Apparel\"}",
+  "requestContext": {
+    "requestId": "test-request-123",
+    "authorizer": {
+      "claims": {
+        "sub": "test-user-id-12345"
+      }
+    }
+  }
+}

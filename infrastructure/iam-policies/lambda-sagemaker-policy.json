@@ -1,0 +1,25 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "InvokeSageMakerEndpoint",
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:InvokeEndpoint"
+      ],
+      "Resource": [
+        "arn:aws:sagemaker:*:*:endpoint/gp-carbon-predictor"
+      ]
+    },
+    {
+      "Sid": "CloudWatchLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:*"
+    }
+  ]
+}

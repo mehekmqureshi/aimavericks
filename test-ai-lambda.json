@@ -1,0 +1,11 @@
+{
+  "body": "{\"productName\":\"Eco Cotton T-Shirt\",\"category\":\"Apparel\",\"materials\":[\"Organic Cotton\",\"Recycled Polyester\"],\"manufacturingProcess\":\"Low-impact dyeing\"}",
+  "requestContext": {
+    "requestId": "test-123",
+    "authorizer": {
+      "claims": {
+        "sub": "test-manufacturer-id"
+      }
+    }
+  }
+}

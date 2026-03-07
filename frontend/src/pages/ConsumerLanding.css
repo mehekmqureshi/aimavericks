@@ -1,0 +1,143 @@
+/**
+ * ConsumerLanding Styles
+ * 
+ * White and green eco-friendly theme for consumer view.
+ * Responsive design for mobile, tablet, and desktop.
+ */
+
+.consumer-landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f5f9f5 0%, #e8f5e9 100%);
+}
+
+/* Header */
+.consumer-header {
+  background: linear-gradient(135deg, #228b22 0%, #32cd32 100%);
+  color: white;
+  padding: 2rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.consumer-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.consumer-logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  font-size: 3rem;
+}
+
+.consumer-tagline {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+/* Main Content */
+.consumer-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* Footer */
+.consumer-footer {
+  background: white;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-text {
+  color: #666;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-copyright {
+  color: #999;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+/* Responsive Design */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .consumer-logo {
+    font-size: 2rem;
+  }
+
+  .logo-icon {
+    font-size: 2.5rem;
+  }
+
+  .consumer-tagline {
+    font-size: 1rem;
+  }
+
+  .consumer-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .consumer-main {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .consumer-logo {
+    font-size: 1.75rem;
+  }
+
+  .logo-icon {
+    font-size: 2rem;
+  }
+
+  .consumer-tagline {
+    font-size: 0.9rem;
+  }
+
+  .consumer-header {
+    padding: 1rem 0.75rem;
+  }
+
+  .consumer-main {
+    padding: 1rem 0.75rem;
+  }
+
+  .consumer-footer {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .footer-text {
+    font-size: 0.85rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.75rem;
+  }
+}

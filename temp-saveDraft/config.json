@@ -1,0 +1,8 @@
+{
+  "name": "saveDraft",
+  "memory": 256,
+  "timeout": 10,
+  "description": "Save draft lifecycle data",
+  "handler": "index.handler",
+  "runtime": "nodejs20.x"
+}

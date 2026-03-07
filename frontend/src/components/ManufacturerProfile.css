@@ -1,0 +1,418 @@
+/**
+ * Manufacturer Profile Component Styles
+ * 
+ * Professional blue theme consistent with dashboard design
+ */
+
+.manufacturer-profile {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 32px;
+  max-width: 800px;
+}
+
+/* ============================================================================
+   Header
+   ============================================================================ */
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e8eef7;
+}
+
+.profile-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e3c72;
+  margin: 0;
+}
+
+.edit-button {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 60, 114, 0.3);
+}
+
+.edit-button:active {
+  transform: translateY(0);
+}
+
+/* ============================================================================
+   Messages
+   ============================================================================ */
+
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #c3e6cb;
+  font-size: 14px;
+  animation: slideIn 0.3s ease;
+}
+
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #f5c6cb;
+  font-size: 14px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================================
+   Loading & Error States
+   ============================================================================ */
+
+.loading-spinner {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 16px;
+}
+
+.retry-button {
+  background: #1e3c72;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.3s ease;
+}
+
+.retry-button:hover {
+  background: #2a5298;
+}
+
+/* ============================================================================
+   Form Groups
+   ============================================================================ */
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e3c72;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-input {
+  padding: 12px 16px;
+  border: 2px solid #e8eef7;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #1e3c72;
+  box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.1);
+}
+
+.form-input::placeholder {
+  color: #999;
+}
+
+.form-value {
+  padding: 12px 16px;
+  background: #f8f9fc;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  border: 2px solid transparent;
+}
+
+/* ============================================================================
+   Certifications
+   ============================================================================ */
+
+.certifications-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.certifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 40px;
+  padding: 12px;
+  background: #f8f9fc;
+  border-radius: 8px;
+  border: 2px solid #e8eef7;
+}
+
+.certification-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.remove-cert-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.remove-cert-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.add-certification {
+  display: flex;
+  gap: 8px;
+}
+
+.add-certification .form-input {
+  flex: 1;
+}
+
+.add-cert-button {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.add-cert-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 60, 114, 0.3);
+}
+
+.add-cert-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.certifications-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  background: #f8f9fc;
+  border-radius: 8px;
+  min-height: 40px;
+}
+
+.certification-badge {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.no-certifications {
+  color: #999;
+  font-size: 14px;
+  font-style: italic;
+  padding: 8px;
+}
+
+/* ============================================================================
+   Metadata
+   ============================================================================ */
+
+.profile-metadata {
+  display: flex;
+  gap: 32px;
+  padding: 16px;
+  background: #f8f9fc;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metadata-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metadata-value {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* ============================================================================
+   Action Buttons
+   ============================================================================ */
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 2px solid #e8eef7;
+}
+
+.cancel-button {
+  background: white;
+  color: #666;
+  border: 2px solid #e8eef7;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-button:hover:not(:disabled) {
+  background: #f8f9fc;
+  border-color: #d0d9e8;
+}
+
+.cancel-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.save-button {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 60, 114, 0.3);
+}
+
+.save-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.save-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ============================================================================
+   Responsive Design
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .manufacturer-profile {
+    padding: 20px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .profile-header h2 {
+    font-size: 24px;
+  }
+
+  .profile-metadata {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-button,
+  .save-button {
+    width: 100%;
+  }
+
+  .add-certification {
+    flex-direction: column;
+  }
+
+  .add-cert-button {
+    width: 100%;
+  }
+}

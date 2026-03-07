@@ -1,0 +1,221 @@
+/**
+ * VerificationBadge Component Styles
+ * Green for verified, red for failed
+ */
+
+.verification-badge {
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.verification-badge.verified {
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+  border: 2px solid #228b22;
+  color: #228b22;
+}
+
+.verification-badge.failed {
+  background: linear-gradient(135deg, #ffebee 0%, #fef5f5 100%);
+  border: 2px solid #dc3545;
+  color: #dc3545;
+}
+
+/* Size variants */
+.badge-small {
+  padding: 1rem;
+}
+
+.badge-medium {
+  padding: 1.5rem;
+}
+
+.badge-large {
+  padding: 2rem;
+}
+
+/* Badge Content */
+.badge-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Icon */
+.badge-icon {
+  flex-shrink: 0;
+}
+
+.icon-svg {
+  width: 48px;
+  height: 48px;
+}
+
+.badge-small .icon-svg {
+  width: 32px;
+  height: 32px;
+}
+
+.badge-large .icon-svg {
+  width: 64px;
+  height: 64px;
+}
+
+/* Text */
+.badge-text {
+  flex: 1;
+}
+
+.badge-status {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.badge-small .badge-status {
+  font-size: 1.125rem;
+}
+
+.badge-large .badge-status {
+  font-size: 1.75rem;
+}
+
+/* Details */
+.badge-details {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid currentColor;
+  opacity: 0.9;
+}
+
+.detail-line {
+  font-size: 0.9375rem;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detail-time {
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.detail-warning {
+  font-size: 0.9375rem;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(220, 53, 69, 0.1);
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Security Indicator */
+.security-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid currentColor;
+  opacity: 0.8;
+}
+
+.indicator-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.verification-badge.verified .indicator-dot {
+  background: #228b22;
+  box-shadow: 0 0 0 0 rgba(34, 139, 34, 0.7);
+}
+
+.verification-badge.failed .indicator-dot {
+  background: #dc3545;
+  box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+}
+
+.indicator-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 currentColor;
+  }
+  50% {
+    box-shadow: 0 0 0 8px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.verification-badge {
+  animation: slideIn 0.4s ease-out;
+}
+
+/* Hover effect */
+.verification-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .verification-badge {
+    padding: 1rem;
+  }
+
+  .badge-content {
+    gap: 0.75rem;
+  }
+
+  .icon-svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .badge-status {
+    font-size: 1.25rem;
+  }
+
+  .detail-line,
+  .detail-warning {
+    font-size: 0.875rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .verification-badge {
+    box-shadow: none;
+    border-width: 1px;
+  }
+
+  .indicator-dot {
+    animation: none;
+  }
+}

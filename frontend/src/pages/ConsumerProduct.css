@@ -1,0 +1,368 @@
+/**
+ * ConsumerProduct Styles
+ * 
+ * White and green eco-friendly theme with responsive design.
+ * Clean layout with visual hierarchy for product information.
+ */
+
+.consumer-product {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f5f9f5 0%, #e8f5e9 100%);
+}
+
+/* Header */
+.consumer-product-header {
+  background: linear-gradient(135deg, #228b22 0%, #32cd32 100%);
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-back {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-2px);
+}
+
+.header-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  font-size: 1.75rem;
+}
+
+.header-spacer {
+  width: 100px; /* Balance the back button */
+}
+
+/* Main Content */
+.consumer-product-main {
+  flex: 1;
+  padding: 2rem 1rem;
+}
+
+.consumer-product-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Verification Section */
+.verification-section {
+  margin-bottom: 2rem;
+}
+
+/* Analytics Section */
+.analytics-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-title {
+  font-size: 1.75rem;
+  color: #228b22;
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.chart-container {
+  margin-bottom: 3rem;
+}
+
+.chart-container:last-child {
+  margin-bottom: 0;
+}
+
+.chart-title {
+  font-size: 1.25rem;
+  color: #333;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+/* Additional Information */
+.additional-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-card-title {
+  font-size: 1.25rem;
+  color: #228b22;
+  margin: 0 0 1rem 0;
+}
+
+.info-card-text {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-list li {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.info-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #228b22;
+  font-weight: bold;
+}
+
+.info-list strong {
+  color: #333;
+}
+
+/* Loading State */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 2rem;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e0e0e0;
+  border-top-color: #228b22;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  margin-top: 1rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Error State */
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.error-title {
+  font-size: 1.75rem;
+  color: #333;
+  margin: 0 0 1rem 0;
+}
+
+.error-message {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0 0 2rem 0;
+  max-width: 500px;
+}
+
+.btn-back-scanner {
+  background: linear-gradient(135deg, #228b22 0%, #32cd32 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(34, 139, 34, 0.3);
+}
+
+.btn-back-scanner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 139, 34, 0.4);
+}
+
+/* Footer */
+.consumer-product-footer {
+  background: white;
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-text {
+  color: #666;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-copyright {
+  color: #999;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+/* Responsive Design */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .consumer-product-main {
+    padding: 1.5rem 1rem;
+  }
+
+  .analytics-section {
+    padding: 1.5rem;
+  }
+
+  .analytics-title {
+    font-size: 1.5rem;
+  }
+
+  .chart-title {
+    font-size: 1.1rem;
+  }
+
+  .additional-info {
+    grid-template-columns: 1fr;
+  }
+
+  .header-logo {
+    font-size: 1.25rem;
+  }
+
+  .logo-icon {
+    font-size: 1.5rem;
+  }
+
+  .header-spacer {
+    width: 80px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .consumer-product-main {
+    padding: 1rem 0.75rem;
+  }
+
+  .analytics-section {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .analytics-title {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .chart-container {
+    margin-bottom: 2rem;
+  }
+
+  .chart-title {
+    font-size: 1rem;
+  }
+
+  .info-card {
+    padding: 1rem;
+  }
+
+  .info-card-title {
+    font-size: 1.1rem;
+  }
+
+  .header-logo {
+    font-size: 1.1rem;
+  }
+
+  .logo-icon {
+    font-size: 1.25rem;
+  }
+
+  .btn-back {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .header-spacer {
+    width: 60px;
+  }
+
+  .error-icon {
+    font-size: 3rem;
+  }
+
+  .error-title {
+    font-size: 1.5rem;
+  }
+
+  .error-message {
+    font-size: 1rem;
+  }
+}

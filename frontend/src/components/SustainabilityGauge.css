@@ -1,0 +1,229 @@
+/**
+ * SustainabilityGauge Component Styles
+ * Green color theme with dynamic color gradient
+ */
+
+.sustainability-gauge {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Size variants */
+.gauge-small {
+  max-width: 250px;
+}
+
+.gauge-medium {
+  max-width: 350px;
+}
+
+.gauge-large {
+  max-width: 450px;
+}
+
+/* Header */
+.gauge-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.gauge-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #228b22;
+  margin: 0;
+}
+
+/* Gauge Container */
+.gauge-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 1rem 0;
+}
+
+.gauge-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Score Display */
+.gauge-score {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.score-number {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.score-max {
+  font-size: 1.25rem;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+/* Rating Label */
+.gauge-rating {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Scale Markers */
+.gauge-scale {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 0.5rem;
+  padding: 0 10px;
+}
+
+.scale-marker {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #999;
+}
+
+.scale-start {
+  color: #dc3545;
+}
+
+.scale-middle {
+  color: #ffa500;
+}
+
+.scale-end {
+  color: #228b22;
+}
+
+/* Description */
+.gauge-description {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.gauge-description p {
+  font-size: 0.9375rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Size-specific adjustments */
+.gauge-small .gauge-title {
+  font-size: 1.25rem;
+}
+
+.gauge-small .score-number {
+  font-size: 2rem;
+}
+
+.gauge-small .score-max {
+  font-size: 1rem;
+}
+
+.gauge-small .gauge-rating {
+  font-size: 1rem;
+}
+
+.gauge-small .gauge-container {
+  max-width: 200px;
+}
+
+.gauge-small .gauge-scale {
+  max-width: 200px;
+}
+
+.gauge-large .gauge-title {
+  font-size: 1.75rem;
+}
+
+.gauge-large .score-number {
+  font-size: 4rem;
+}
+
+.gauge-large .score-max {
+  font-size: 1.5rem;
+}
+
+.gauge-large .gauge-rating {
+  font-size: 1.5rem;
+}
+
+.gauge-large .gauge-container {
+  max-width: 400px;
+}
+
+.gauge-large .gauge-scale {
+  max-width: 400px;
+}
+
+/* Animations */
+@keyframes gaugeAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.sustainability-gauge {
+  animation: gaugeAppear 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sustainability-gauge {
+    padding: 1rem;
+  }
+
+  .gauge-title {
+    font-size: 1.25rem;
+  }
+
+  .score-number {
+    font-size: 2.5rem;
+  }
+
+  .score-max {
+    font-size: 1rem;
+  }
+
+  .gauge-rating {
+    font-size: 1rem;
+  }
+
+  .gauge-description p {
+    font-size: 0.875rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .sustainability-gauge {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
