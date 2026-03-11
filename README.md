@@ -1,6 +1,9 @@
 # Green Passport (GP) - AWS Native Serverless Platform
 
 Digital Product Passport (DPP) system for tracking product lifecycle data and sustainability metrics.
+Home Page: https://d3jj1t5hp20hlp.cloudfront.net/
+Manufacturer Dashboard: https://d3jj1t5hp20hlp.cloudfront.net/login (ID: manufacturer@greenpassport.com | Passowrd: Test123!)
+Consumer Dashboard: https://d3jj1t5hp20hlp.cloudfront.net/consumer
 
 ## Architecture
 
